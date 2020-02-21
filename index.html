@@ -1,0 +1,49 @@
+<!-- 
+Source came from here since I'm lazy and didn't want to build one myself.
+https://www.youtube.com/watch?v=onLsz9BwP7M 
+-->
+
+<html>
+    <head>
+        <title>Variable indexes</title>
+        <script>
+            function refresh(){
+                var textContent = document.getElementById('editor-textarea').value.replace(/, [a-z].+/g, "<br>");
+                document.getElementById('viewer').srcdoc = textContent;
+            }
+        </script>
+        <style>
+            *{
+                padding: 0;
+                margin: 0;
+        }
+        .main{
+            background:#ecf0f1;
+            width: 100%;
+            height: 100%;
+            display: inline-flex;
+        }
+        #editor-textarea{
+            width: 100%;
+            height: 95%;
+            margin: 10px;
+            padding: 5px;
+        }
+        #viewer{
+            background: white;
+            border: none;
+            width: 100%;
+            height: 95%;
+            margin: 10px;
+            border: 1px solid #3498db;
+        }
+        </style>
+    </head>
+    <body>
+        <div class="main">
+            <textarea id="editor-textarea" onkeyup = "refresh()" placeholder="Input variables from variables.csv here..."></textarea>
+            <iframe id="viewer"></iframe>
+        </div>
+    </body>
+</html>
+
